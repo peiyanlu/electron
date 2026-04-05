@@ -18,8 +18,8 @@ importers:
         specifier: ^24.12.2
         version: 24.12.2
       electron:
-        specifier: ^39.8.6
-        version: 39.8.6
+        specifier: ^41.1.1
+        version: 41.1.1
       release-it:
         specifier: ^19.2.4
         version: 19.2.4(@types/node@24.12.2)
@@ -789,8 +789,8 @@ packages:
       oxc-resolver:
         optional: true
 
-  electron@39.8.6:
-    resolution: {integrity: sha512-uWX6Jh5LmwL13VwOSKBjebI+ck+03GOwc8V2Sgbmr9pJVJ/cHfli/PkjXuRDr+hq+SLHQuT9mGHSIfScebApRA==}
+  electron@41.1.1:
+    resolution: {integrity: sha512-8bgvDhBjli+3Z2YCKgzzoBPh6391pr7Xv2h/tTJG4ETgvPvUxZomObbZLs31mUzYb6VrlcDDd9cyWyNKtPm3tA==}
     engines: {node: '>= 12.20.55'}
     hasBin: true
 
@@ -2543,10 +2543,10 @@ snapshots:
 
   dts-resolver@2.1.3: {}
 
-  electron@39.8.6:
+  electron@41.1.1:
     dependencies:
       '@electron/get': 2.0.3
-      '@types/node': 22.19.1
+      '@types/node': 24.12.2
       extract-zip: 2.0.1
     transitivePeerDependencies:
       - supports-color
