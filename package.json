@@ -1,6 +1,6 @@
 {
-  "name": "@peiyanlu/electron-ipc",
-  "description": "A personal style Electron tool library.",
+  "name": "@peiyanlu/electron",
+  "description": "Utilities and tools for building Electron apps with clear separation between main, preload, and renderer processes.",
   "version": "1.0.10",
   "type": "module",
   "license": "MIT",
@@ -14,24 +14,24 @@
   },
   "exports": {
     ".": {
-      "import": "./dist/index.js",
-      "types": "./dist/index.d.ts"
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
     },
     "./backend": {
-      "import": "./dist/ElectronBackend.js",
-      "types": "./dist/ElectronBackend.d.ts"
+      "types": "./dist/ElectronBackend.d.ts",
+      "import": "./dist/ElectronBackend.js"
     },
     "./preload": {
-      "import": "./dist/ElectronPreload.js",
-      "types": "./dist/ElectronPreload.d.ts"
+      "types": "./dist/ElectronPreload.d.ts",
+      "import": "./dist/ElectronPreload.js"
     },
     "./frontend": {
-      "import": "./dist/ElectronFrontend.js",
-      "types": "./dist/ElectronFrontend.d.ts"
+      "types": "./dist/ElectronFrontend.d.ts",
+      "import": "./dist/ElectronFrontend.js"
     }
   },
   "devDependencies": {
-    "@peiyanlu/release": "^0.0.7",
+    "@peiyanlu/release": "^0.0.8",
     "@peiyanlu/ts-utils": "^0.0.5",
     "@types/node": "^25.5.2",
     "electron": "^41",
@@ -47,11 +47,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com:peiyanlu/electron-ipc.git"
+    "url": "git+ssh://git@github.com:peiyanlu/electron.git"
   },
-  "homepage": "https://github.com/peiyanlu/electron-ipc",
+  "homepage": "https://github.com/peiyanlu/electron",
   "bugs": {
-    "url": "https://github.com/peiyanlu/electron-ipc/issues"
+    "url": "https://github.com/peiyanlu/electron/issues"
   },
   "publishConfig": {
     "access": "public",

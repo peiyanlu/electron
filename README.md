@@ -1,6 +1,6 @@
-# electron-ipc
+# @peiyanlu/electron
 
-简化 Electron 前后端通信的 ipc 工具
+一个分层设计的 Electron 工具集，提供 backend、preload 和 frontend 的模块化能力封装。
 
 ## 后端
 
@@ -13,7 +13,7 @@ import {
   isDev,
   onChildWindowOpenUrl,
   showAndFocus,
-} from '@peiyanlu/electron-ipc/backend'
+} from '@peiyanlu/electron/backend'
 import { Menu } from 'electron'
 import { join } from 'path'
 import { ElectronSvgHandler } from './electron/IpcHandler'
@@ -86,7 +86,7 @@ IpcHost.addListener('changeTheme', (_e, data: string) => {
 
 ```ts
 import { contextBridge, ipcRenderer } from 'electron'
-import { frontendApiKey, getFrontendApi } from '@peiyanlu/electron-ipc/preload'
+import { frontendApiKey, getFrontendApi } from '@peiyanlu/electron/preload'
 
 
 contextBridge.exposeInMainWorld(frontendApiKey, getFrontendApi(ipcRenderer))
@@ -96,7 +96,7 @@ contextBridge.exposeInMainWorld(frontendApiKey, getFrontendApi(ipcRenderer))
 
 ```ts
 import { svgoChannel, SvgoIpcInterface } from '@/electron/IpcInterface'
-import { ElectronApp, IpcApp } from '@peiyanlu/electron-ipc/frontend'
+import { ElectronApp, IpcApp } from '@peiyanlu/electron/frontend'
 
 
 ElectronApp.startup()

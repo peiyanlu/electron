@@ -40,28 +40,28 @@
 
 ## [1.0.3](///compare/v1.0.2...v1.0.3) (2025-11-18)
 
-## [1.0.2](https://github.com/peiyanlu/electron-ipc/compare/v1.0.1...v1.0.2) (2025-11-17)
+## [1.0.2](https://github.com/peiyanlu/electron/compare/v1.0.1...v1.0.2) (2025-11-17)
 
 ### ✨ Features | 新功能
 
-* 增加窗口创建工具 ([5efdba3](https://github.com/peiyanlu/electron-ipc/commit/5efdba3652a1933c956f1c286814b8e4d09e78ce))
+* 增加窗口创建工具 ([5efdba3](https://github.com/peiyanlu/electron/commit/5efdba3652a1933c956f1c286814b8e4d09e78ce))
 
-## [1.0.1](https://github.com/peiyanlu/electron-ipc/compare/v1.0.0...v1.0.1) (2025-11-11)
+## [1.0.1](https://github.com/peiyanlu/electron/compare/v1.0.0...v1.0.1) (2025-11-11)
 
 ### ♻ Code Refactoring | 代码重构
 
-* 优化代码结构 ([b58a085](https://github.com/peiyanlu/electron-ipc/commit/b58a085f073f653cb7b7f4002f60493016734b5e))
+* 优化代码结构 ([b58a085](https://github.com/peiyanlu/electron/commit/b58a085f073f653cb7b7f4002f60493016734b5e))
 
 ### 👷‍ Build System | 构建
 
-* 包名重命名 ([2ebac1d](https://github.com/peiyanlu/electron-ipc/commit/2ebac1db1d7717efb0b3856f1a97c2198a0749c0))
+* 包名重命名 ([2ebac1d](https://github.com/peiyanlu/electron/commit/2ebac1db1d7717efb0b3856f1a97c2198a0749c0))
 
 ## 1.0.0 (2025-07-18)
 
 ### ✨ Features | 新功能
 
-* 初始功能提交 ([0bb8bad](https://github.com/peiyanlu/electron-ipc/commit/0bb8bad30f684ec1c366634409040738710276ba))
+* 初始功能提交 ([0bb8bad](https://github.com/peiyanlu/electron/commit/0bb8bad30f684ec1c366634409040738710276ba))
 
 ### 👷‍ Build System | 构建
 
-* 补充 MIT 协议 ([bd68afa](https://github.com/peiyanlu/electron-ipc/commit/bd68afa207e61775ce0d892df54e27fe11b3d3c2))
+* 补充 MIT 协议 ([bd68afa](https://github.com/peiyanlu/electron/commit/bd68afa207e61775ce0d892df54e27fe11b3d3c2))
