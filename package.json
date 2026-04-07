@@ -1,6 +1,6 @@
 {
   "name": "@peiyanlu/electron-ipc",
-  "description": "Electron IPC connection tool.",
+  "description": "A personal style Electron tool library.",
   "version": "1.0.10",
   "type": "module",
   "license": "MIT",
@@ -10,7 +10,7 @@
     "build": "tsdown",
     "typecheck": "tsc --noEmit",
     "prepublish": "tsdown",
-    "release": "release-it"
+    "release": "release"
   },
   "exports": {
     ".": {
@@ -31,17 +31,15 @@
     }
   },
   "devDependencies": {
-    "@peiyanlu/ts-utils": "^0.0.1",
-    "@release-it/conventional-changelog": "^10.0.2",
-    "@types/node": "^24.10.1",
-    "electron": "^39.2.3",
-    "release-it": "^19.0.6",
-    "release-it-pnpm": "^4.6.6",
-    "tsdown": "^0.16.7",
-    "typescript": "^5.9.3"
+    "@peiyanlu/release": "^0.0.7",
+    "@peiyanlu/ts-utils": "^0.0.5",
+    "@types/node": "^25.5.2",
+    "electron": "^41",
+    "tsdown": "^0.21.7",
+    "typescript": "^6.0.2"
   },
   "peerDependencies": {
-    "electron": "^39"
+    "electron": "^41"
   },
   "author": {
     "name": "YanluPei",
@@ -60,14 +58,10 @@
     "registry": "https://registry.npmjs.org"
   },
   "files": [
-    "dist",
-    "LICENSE",
-    "README.MD",
-    "package.json"
+    "dist"
   ],
   "keywords": [
     "typescript",
-    "electron",
-    "ipc"
+    "electron"
   ]
 }
