@@ -1,3 +1,12 @@
+## <small>[1.0.11](github.com/peiyanlu/electron/compare/v1.0.10...v1.0.11) (2026-04-07)</small>
+
+### 👷‍ 构建系统
+
+* 更新项目信息 ([5134623](/github.com/peiyanlu/electron/commit/5134623896303800bebc4ed09c08f3a04eef0ac1))
+
+### 🔧 CI 配置
+
+* 更换 release 工具 ([6643bd2](/github.com/peiyanlu/electron/commit/6643bd2ece45baab4ce6d2628294d5da332c8ec0))
 # Changelog
 
 ## [1.0.10](///compare/v1.0.9...v1.0.10) (2025-12-01)
