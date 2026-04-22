@@ -20,7 +20,8 @@
   "packageRules": [
     {
       "matchDepTypes": ["devDependencies"],
-      "labels": ["devDeps"]
+      "labels": ["devDeps"],
+      "groupName": "auto-merge"
     },
     {
       "matchDepTypes": ["peerDependencies"],
@@ -38,14 +39,14 @@
     {
       "matchManagers": ["github-actions"],
       "matchUpdateTypes": ["minor", "patch"],
-      "groupName": "github-actions-minor-patch",
+      "groupName": "auto-merge",
       "labels": ["github-actions", "minor-patch"],
       "automerge": true
     },
     {
       "matchManagers": ["github-actions"],
       "matchUpdateTypes": ["major"],
-      "groupName": "github-actions-major",
+      "groupName": "auto-merge",
       "labels": ["github-actions", "major"],
       "automerge": true
     }

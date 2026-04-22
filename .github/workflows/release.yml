@@ -1,60 +1,21 @@
-name: Release on Deps Change
+name: Release Project
 
 on:
-  push:
-    branches:
-      - master
-    paths:
-      - package.json
-      - pnpm-lock.yaml
-  workflow_dispatch: {}
+  workflow_run:
+    workflows: [ "Detect Deps" ]
+    types:
+      - completed
+  workflow_dispatch:
 
 permissions:
   contents: write
+  id-token: write
 
 jobs:
-  check:
-    name: Check Deps Change
-    runs-on: ubuntu-latest
-    outputs:
-      changed: ${{ steps.check.outputs.changed }}
-    
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v6
-        with:
-          fetch-depth: 2
-      
-      - name: Setup Node
-        uses: actions/setup-node@v6
-        with:
-          node-version: 24
-      
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          version: 10
-      
-      - name: Detect Deps version change
-        id: check
-        run: |
-          old_version=$(git show HEAD^:package.json | jq -r '.devDependencies.electron // .dependencies.electron // empty')
-          new_version=$(jq -r '.devDependencies.electron // .dependencies.electron // empty' package.json)
-          
-          echo "Old Deps: $old_version"
-          echo "New Deps: $new_version"
-          
-          if [ "$old_version" != "$new_version" ]; then
-            echo "changed=true" >> $GITHUB_OUTPUT
-          else
-            echo "changed=false" >> $GITHUB_OUTPUT
-          fi
-  
   release:
-    name: Release NPM Package
-    needs: check
-    if: needs.check.outputs.changed == 'true'
+    name: Release
     runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     
     steps:
       - name: Checkout
@@ -62,31 +23,33 @@ jobs:
         with:
           fetch-depth: 0
           fetch-tags: true
+          ref: ${{ github.ref }}
       
-      - name: Setup Node
+      - name: Install pnpm
+        uses: pnpm/action-setup@v6
+        with:
+          version: 10.33.0
+      
+      - name: Install Node
         uses: actions/setup-node@v6
         with:
-          node-version: 24
-          registry-url: 'https://registry.npmjs.org/'
-      
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          version: 10
+          node-version: 24.15.0
+          registry-url: https://registry.npmjs.org/
+          package-manager-cache: false
       
       - name: Set Git Identity
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
       
-      - name: Install dependencies
-        run: pnpm install
+      - name: Install deps
+        run: pnpm install --frozen-lockfile
       
-      - name: Build project
+      - name: Build
         run: pnpm build
       
-      - name: Release with release-it
-        run: pnpm exec release-it --ci
+      - name: Release
+        run: pnpm exec release --ci
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
