@@ -1,12 +1,6 @@
-import {
-  IpcAppChannel,
-  IpcAppNotifications,
-  ipcChannel,
-  IpcListener,
-  IpcSocketBackend,
-  RemoveFunction,
-} from '../common/IpcSocket.js'
-import { ElectronDialogHandler, IpcHostHandler, IpcHostNotifyHandler } from './IpcHandler.js'
+import type { IpcAppNotifications, IpcListener, IpcSocketBackend, RemoveFunction } from '../common/ipc-socket.js'
+import { IpcAppChannel, ipcChannel } from '../common/ipc-socket.js'
+import { ElectronDialogHandler, IpcHostHandler, IpcHostNotifyHandler } from './ipc-handler.js'
 
 
 export interface IpcHostOpts {

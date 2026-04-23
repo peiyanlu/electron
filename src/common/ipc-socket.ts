@@ -11,6 +11,7 @@ export type IpcInvokeReturn =
   | { result: any, error?: never }
   | { result?: never, error: string };
 
+
 export interface IpcSocket {
   send: (channel: string, ...data: any[]) => void;
   addListener: (channel: string, listener: IpcListener) => RemoveFunction;
@@ -32,6 +33,7 @@ export interface IpcSocketBackend extends IpcSocket {
 export enum IpcAppChannel {
   AppNotify = 'ipcApp-notify',
 }
+
 
 export enum IpcHostChannel {
   Functions = 'ipc-host',

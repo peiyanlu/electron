@@ -1,11 +1,12 @@
-import { app, autoUpdater, BrowserWindow, BrowserWindowConstructorOptions, Event, shell } from 'electron'
+import type { BrowserWindowConstructorOptions, Event } from 'electron'
+import { app, autoUpdater, BrowserWindow, shell } from 'electron'
 import { spawn } from 'node:child_process'
 import { appendFile } from 'node:fs/promises'
 import { arch, platform } from 'node:os'
 import { basename, join, posix, resolve } from 'node:path'
 import { format } from 'node:util'
-import { classifyUrl, isMac, isWin } from '../common/Utils.js'
-import { ElectronHost } from './ElectronHost.js'
+import { classifyUrl, isMac, isWin } from '../common/utils.js'
+import { Host } from './host.js'
 
 
 /**
@@ -305,7 +306,7 @@ export function checkUpdate(options: UpdateOptions) {
         releaseDate,
         updateURL,
         done: () => {
-          ElectronHost.tray?.enableQuit()
+          Host.tray?.enableQuit()
           autoUpdater.quitAndInstall()
         },
       })

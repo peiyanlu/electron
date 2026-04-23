@@ -1,18 +1,10 @@
-import {
-  app,
-  BrowserWindow,
-  BrowserWindowConstructorOptions,
-  ipcMain,
-  Menu,
-  NativeImage,
-  Tray,
-  webContents,
-} from 'electron'
-import { IpcListener, IpcSocketBackend, RemoveFunction } from '../common/IpcSocket.js'
-import { isMac } from '../common/Utils.js'
-import { IpcHandler } from './IpcHandler.js'
-import { IpcHost } from './IpcHost.js'
-import { isDev, showAndFocus } from './Utils.js'
+import type { BrowserWindowConstructorOptions, NativeImage } from 'electron'
+import { app, BrowserWindow, ipcMain, Menu, Tray, webContents } from 'electron'
+import type { IpcListener, IpcSocketBackend, RemoveFunction } from '../common/ipc-socket.js'
+import { isMac } from '../common/utils.js'
+import { IpcHandler } from './ipc-handler.js'
+import { IpcHost } from './ipc-host.js'
+import { isDev, showAndFocus } from './utils.js'
 
 
 interface ElectronHostOptions {
@@ -36,7 +28,6 @@ interface CreatedTray {
   /** 允许应用退出而不是退出到托盘 */
   enableQuit(): void
 }
-
 
 interface BrowserWindowOptions extends BrowserWindowConstructorOptions {
   /**
@@ -110,7 +101,7 @@ class ElectronIpc implements IpcSocketBackend {
 }
 
 
-export class ElectronHost {
+export class Host {
   private static _ipc: ElectronIpc | undefined
   private static _windowOptions: BrowserWindowOptions | undefined
   

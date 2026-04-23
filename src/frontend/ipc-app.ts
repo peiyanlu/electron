@@ -1,15 +1,14 @@
-import { PickAsyncMethods } from '@peiyanlu/ts-utils'
-import {
-  ipcChannel,
-  IpcHostChannel,
+import type { PickAsyncMethods } from '@peiyanlu/ts-utils'
+import type {
   IpcHostFunctions,
   IpcHostNotifications,
   IpcInvokeReturn,
   IpcListener,
   IpcSocketFrontend,
   RemoveFunction,
-} from '../common/IpcSocket.js'
-import { IpcAppNotifyHandler } from './IpcHandler.js'
+} from '../common/ipc-socket.js'
+import { ipcChannel, IpcHostChannel } from '../common/ipc-socket.js'
+import { IpcAppNotifyHandler } from './ipc-handler.js'
 
 
 export class IpcApp {

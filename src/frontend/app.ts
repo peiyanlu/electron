@@ -1,7 +1,9 @@
 import type { Dialog } from 'electron'
-import { IpcHostChannel, IpcListener, IpcSocketFrontend } from '../common/IpcSocket.js'
-import { ElectronApi, frontendApiKey } from '../ElectronPreload.js'
-import { IpcApp } from './IpcApp.js'
+import type { IpcListener, IpcSocketFrontend } from '../common/ipc-socket.js'
+import { IpcHostChannel } from '../common/ipc-socket.js'
+import type { ElectronApi } from '../preload.js'
+import { frontendApiKey } from '../preload.js'
+import { IpcApp } from './ipc-app.js'
 
 
 declare global {
@@ -37,7 +39,7 @@ class ElectronIpc implements IpcSocketFrontend {
 }
 
 
-export class ElectronApp {
+export class App {
   public static dialogIpc = IpcApp.makeIpcFunctionProxy<Dialog>(IpcHostChannel.Dialog, 'callDialog')
   
   private static _ipc?: ElectronIpc
@@ -57,3 +59,4 @@ export class ElectronApp {
   }
 }
 
+export { App as ElectronApp }

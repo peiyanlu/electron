@@ -1,13 +1,8 @@
-import { AsyncMethodsOf } from '@peiyanlu/ts-utils'
+import type { AsyncMethodsOf } from '@peiyanlu/ts-utils'
 import { dialog, Dialog, Event } from 'electron'
-import {
-  IpcHostChannel,
-  IpcHostFunctions,
-  IpcHostNotifications,
-  IpcInvokeReturn,
-  RemoveFunction,
-} from '../common/IpcSocket.js'
-import { IpcHost } from './IpcHost.js'
+import type { IpcHostFunctions, IpcHostNotifications, IpcInvokeReturn, RemoveFunction } from '../common/ipc-socket.js'
+import { IpcHostChannel } from '../common/ipc-socket.js'
+import { IpcHost } from './ipc-host.js'
 
 
 /**

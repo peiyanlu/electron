@@ -7,7 +7,7 @@
 ```ts
 import {
   checkSquirrel,
-  ElectronHost,
+  Host,
   getIconExt,
   IpcHost,
   isDev,
@@ -30,14 +30,14 @@ const trayIcon = getIcon(isDev ? __dirname : process.resourcesPath, true)
 
 
 if (checkSquirrel()) {
-  ElectronHost.shutdown()
+  Host.shutdown()
 }
 
-ElectronHost.startup({
+Host.startup({
   ipcHandlers: [ ElectronSvgHandler ],
 })
 
-ElectronHost.openMainWindow({
+Host.openMainWindow({
     webPreferences: {
       preload: require.resolve('./preload.js'),
       sandbox: true,
@@ -59,13 +59,13 @@ ElectronHost.openMainWindow({
         {
           label: '打开',
           click: () => {
-            showAndFocus(ElectronHost.mainWindow)
+            showAndFocus(Host.mainWindow)
           },
         },
         {
           label: '退出',
           click: () => {
-            ElectronHost.shutdown()
+            Host.shutdown()
           },
         },
       ]),
@@ -96,10 +96,10 @@ contextBridge.exposeInMainWorld(frontendApiKey, getFrontendApi(ipcRenderer))
 
 ```ts
 import { svgoChannel, SvgoIpcInterface } from '@/electron/IpcInterface'
-import { ElectronApp, IpcApp } from '@peiyanlu/electron/frontend'
+import { App, IpcApp } from '@peiyanlu/electron/frontend'
 
 
-ElectronApp.startup()
+App.startup()
 const svgoIpc = IpcApp.makeIpcFunctionProxy<SvgoIpcInterface>(svgoChannel, 'callMethod')
 
 

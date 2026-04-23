@@ -9,7 +9,7 @@ const config: UserConfig[] = defineConfig([
     platform: 'neutral',
   },
   {
-    entry: 'src/ElectronBackend.ts',
+    entry: 'src/backend.ts',
     format: 'esm',
     outDir: 'dist',
     platform: 'node',
@@ -18,13 +18,13 @@ const config: UserConfig[] = defineConfig([
     fixedExtension: false,
   },
   {
-    entry: 'src/ElectronFrontend.ts',
+    entry: 'src/frontend.ts',
     format: 'esm',
     outDir: 'dist',
     platform: 'browser',
   },
   {
-    entry: 'src/ElectronPreload.ts',
+    entry: 'src/preload.ts',
     format: 'esm',
     outDir: 'dist',
     platform: 'neutral',

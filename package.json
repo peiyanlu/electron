@@ -18,16 +18,16 @@
       "import": "./dist/index.js"
     },
     "./backend": {
-      "types": "./dist/ElectronBackend.d.ts",
-      "import": "./dist/ElectronBackend.js"
+      "types": "./dist/backend.d.ts",
+      "import": "./dist/backend.js"
     },
     "./preload": {
-      "types": "./dist/ElectronPreload.d.ts",
-      "import": "./dist/ElectronPreload.js"
+      "types": "./dist/preload.d.ts",
+      "import": "./dist/preload.js"
     },
     "./frontend": {
-      "types": "./dist/ElectronFrontend.d.ts",
-      "import": "./dist/ElectronFrontend.js"
+      "types": "./dist/frontend.d.ts",
+      "import": "./dist/frontend.js"
     }
   },
   "devDependencies": {
