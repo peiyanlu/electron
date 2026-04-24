@@ -9,46 +9,22 @@
   "automergeType": "pr",
   "automergeStrategy": "rebase",
   "timezone": "Asia/Shanghai",
-  "labels": ["dependencies"],
+  "labels": ["deps"],
   "ignorePaths": [
-    "**/test/**",
-    "**/*-lock.*"
+    "**/tests/**"
   ],
-  "prConcurrentLimit": 0,
-  "prHourlyLimit": 0,
+  "prConcurrentLimit": 5,
+  "prHourlyLimit": 2,
   "rangeStrategy": "bump",
   "packageRules": [
     {
-      "matchDepTypes": ["devDependencies"],
-      "labels": ["devDeps"],
-      "groupName": "auto-merge"
+      "matchManagers": ["github-actions"],
+      "labels": ["github-actions"],
+      "automerge": true
     },
     {
       "matchDepTypes": ["peerDependencies"],
       "enabled": false
-    },
-    {
-      "matchUpdateTypes": ["major"],
-      "labels": ["major"],
-      "automerge": false
-    },
-    {
-      "matchDepNames": [],
-      "enabled": false
-    },
-    {
-      "matchManagers": ["github-actions"],
-      "matchUpdateTypes": ["minor", "patch"],
-      "groupName": "auto-merge",
-      "labels": ["github-actions", "minor-patch"],
-      "automerge": true
-    },
-    {
-      "matchManagers": ["github-actions"],
-      "matchUpdateTypes": ["major"],
-      "groupName": "auto-merge",
-      "labels": ["github-actions", "major"],
-      "automerge": true
     }
   ],
   "ignoreDeps": []
