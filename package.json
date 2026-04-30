@@ -33,13 +33,13 @@
   "devDependencies": {
     "@peiyanlu/release": "^0.0.12",
     "@peiyanlu/ts-utils": "^0.0.5",
-    "@types/node": "^25.6.0",
-    "electron": "^41",
+    "@types/node": "^24.12.2",
+    "electron": "^41.0.0",
     "tsdown": "^0.21.10",
-    "typescript": "^6.0.3"
+    "typescript": "^6.0.2"
   },
   "peerDependencies": {
-    "electron": "^41"
+    "electron": "^41.0.0"
   },
   "author": {
     "name": "YanluPei",
@@ -63,5 +63,8 @@
   "keywords": [
     "typescript",
     "electron"
-  ]
+  ],
+  "engines": {
+    "node": ">=24.0.0"
+  }
 }
