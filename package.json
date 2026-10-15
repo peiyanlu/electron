@@ -34,8 +34,8 @@
     "@peiyanlu/release": "^0.0.16",
     "@peiyanlu/ts-utils": "^0.0.12",
     "@types/node": "^24.13.2",
-    "electron": "^42.10.1",
-    "tsdown": "^0.22.14",
+    "electron": "^42.11.12",
+    "tsdown": "^0.23.1",
     "typescript": "^6.0.3"
   },
   "peerDependencies": {
